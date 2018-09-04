@@ -1,0 +1,23 @@
+{
+  "name": "marc-palindrome",
+  "version": "0.1.0",
+  "description": "Palindrome detector",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MarcusRohwer/palindrome.git"
+  },
+  "keywords": [
+    "palindrome",
+    "javascript"
+  ],
+  "author": "Michael",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MarcusRohwer/palindrome/issues"
+  },
+  "homepage": "https://github.com/MarcusRohwer/palindrome#readme"
+}

@@ -1,3 +1,7 @@
+'use strict';
+
+module.exports = Phrase;
+
 
 // Reverses a string. => prototype: inheritance
 String.prototype.reverse = function() {
@@ -14,13 +18,15 @@ String.prototype.blank = function() {
 function Phrase(content) {
   this.content = content;
 
-  this.processor = function(string) {
-    return string.toLowerCase();
+  // Returns content processed for palindrome testing.
+  this.processedContent = function processedContent() {
+    return this.letters().toLowerCase();
   }
 
- // Returns content processed for palindrome testing.
- this.processedContent = function() {
-   return this.processor(this.content);
+  // Returns the letters in the content.
+  this.letters = function letters() {
+   const regex = /[a-z]/i;
+   return Array.from(this.content).filter(c => c.match(regex)).join("");
  }
 
   // Returns true for a palindrome, false otherwise.
@@ -28,17 +34,3 @@ function Phrase(content) {
     return this.processedContent() === this.processedContent().reverse();
   }
 }
-
-
-// Defines a TranslatedPhrase object.
-function TranslatedPhrase(content, translation) {
-  this.content = content;
-  this.translation = translation;
-
-  // Returns translation processed for palindrome testing.
-  this.processedContent = function processedContent() {
-    return this.processor(this.translation);
-  }
-}
-
-TranslatedPhrase.prototype = new Phrase();
