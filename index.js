@@ -8,6 +8,7 @@ String.prototype.reverse = function() {
   return Array.from(this).reverse().join("");
 }
 
+//Tests if the string is empty or consists of whitespaces
 String.prototype.blank = function() {
   let regex = new RegExp(/^\s*$/);
   return regex.test(this);
@@ -31,6 +32,7 @@ function Phrase(content) {
 
   // Returns true for a palindrome, false otherwise.
   this.palindrome = function palindrome() {
-    return this.processedContent() === this.processedContent().reverse();
+    return (this.processedContent() === this.processedContent().reverse()) &&
+            (this.processedContent() !== "");
   }
 }
